@@ -1,0 +1,36 @@
+const int RED = 10;
+const int YELLOW = 9;
+const int GREEN = 8;
+
+void setLights(bool redState, bool yellowState, bool greenState)
+{
+  digitalWrite(RED, redState);
+  digitalWrite(YELLOW, yellowState);
+  digitalWrite(GREEN, greenState);
+}
+
+void setup()
+{
+  pinMode(RED, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+}
+
+void loop()
+{
+  // Red light
+  setLights(HIGH, LOW, LOW);
+  delay(5000);
+
+  // Red + Yellow
+  setLights(HIGH, HIGH, LOW);
+  delay(2000);
+
+  // Green light
+  setLights(LOW, LOW, HIGH);
+  delay(5000);
+
+  // Yellow light
+  setLights(LOW, HIGH, LOW);
+  delay(2000);
+}
